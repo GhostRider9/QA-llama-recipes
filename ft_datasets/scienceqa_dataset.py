@@ -18,7 +18,7 @@ def get_preprocessed_sciqa(dataset_config, tokenizer, split):
                 hint=r["hint"],
                 question=r["question"],
                 options=options,
-                answer=choice_prefixes[r['answer']],
+                answer=f"({choice_prefixes[r['answer']]})",
                 eos_token=tokenizer.eos_token,
             )
         }
