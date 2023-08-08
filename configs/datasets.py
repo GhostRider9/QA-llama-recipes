@@ -26,3 +26,9 @@ class alpaca_dataset:
     train_split: str = "train"
     test_split: str = "val"
     data_path: str = "ft_datasets/alpaca_data.json"
+
+@dataclass
+class science_qa_dataset:
+    dataset: str = "science_qa_dataset"
+    train_split: str = "train"
+    test_split: str = "validation"
