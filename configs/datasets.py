@@ -32,3 +32,8 @@ class science_qa_dataset:
     dataset: str = "science_qa_dataset"
     train_split: str = "train"
     test_split: str = "validation"
+
+@dataclass
+class llm_science_dataset:
+    dataset: str = "llm_science_dataset"
+    train_split: str = "train"

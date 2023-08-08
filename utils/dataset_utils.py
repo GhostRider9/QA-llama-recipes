@@ -10,6 +10,7 @@ from ft_datasets import (
     get_alpaca_dataset,
     get_samsum_dataset,
     get_sciqa_dataset,
+    get_llmsci_dataset,
 )
 from typing import Optional
 
@@ -19,6 +20,7 @@ DATASET_PREPROC = {
     "grammar_dataset": get_grammar_dataset,
     "samsum_dataset": get_samsum_dataset,
     "science_qa_dataset": get_sciqa_dataset,
+    "llm_science_dataset": get_llmsci_dataset,
 }
 
 
