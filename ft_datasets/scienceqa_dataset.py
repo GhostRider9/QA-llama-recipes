@@ -6,7 +6,7 @@ def get_preprocessed_sciqa(dataset_config, tokenizer, split):
     dataset = datasets.load_dataset("metaeval/ScienceQA_text_only", split=split)
     choice_prefixes = [chr(ord('A') + i) for i in range(26)] # A-Z
 
-    prompt = '''Context: {hint}\nQuestion: {question}\nOptions: {options}\n---\nAnswer:{answer}{eos_token}'''
+    prompt = '''Context: {hint}\nQuestion: {question}\nOptions: {options}\n---\nAnswer: Option {answer}{eos_token}'''
 
     def format_options(options):
         return '\n'.join([f'({c}) {o}' for c, o in zip(choice_prefixes, options)])
@@ -18,7 +18,7 @@ def get_preprocessed_sciqa(dataset_config, tokenizer, split):
                 hint=r["hint"],
                 question=r["question"],
                 options=options,
-                answer=f"({choice_prefixes[r['answer']]})",
+                answer=f"{choice_prefixes[r['answer']]}",
                 eos_token=tokenizer.eos_token,
             )
         }
