@@ -31,7 +31,8 @@ class alpaca_dataset:
 class science_qa_dataset:
     dataset: str = "science_qa_dataset"
     train_split: str = "train"
-    test_split: str = "validation"
+    valid_split: str = "validation"
+    test_split: str = "test"
 
 @dataclass
 class llm_science_dataset:
