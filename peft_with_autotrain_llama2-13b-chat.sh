@@ -1,0 +1,22 @@
+CUDA_VISIBLE_DEVICES=0,1 autotrain llm \
+    --seed 42 \
+    --train \
+    --data_path ./data/autotrain \
+    --train_split train \
+    --valid_split valid \
+    --project_name llama2-13b-chat_lora_autotrain_1 \
+    --model /root/Model/llama_2_13B_chat \
+    --trainer sft \
+    --use_peft \
+    --use_int4 \
+    --fp16 \
+    --learning_rate 1e-4 \
+    --weight_decay 0.1 \
+    --train_batch_size 1 \
+    --gradient_accumulation_steps 4 \
+    --num_train_epochs 20 \
+    --eval_batch_size 2 \
+    --evaluation_strategy epoch \
+    --save_strategy epoch \
+    --save_total_limit 10 \
+    --logging_steps 5
